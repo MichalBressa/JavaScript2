@@ -5,14 +5,14 @@
 
 * {
     font-family: 'Roboto', sans-serif;
-    font-size: 4vw;
+    font-size: 3vw;
 }
 
 button {
     background-color: white;
     color: black;
     border: 2px solid #555555;
-    padding: 5%;
+    padding: 2% 4%;
     border-radius: 10px;
    /* width: 14vw;
     height: 12vh;*/
@@ -28,9 +28,11 @@ button:hover {
     justify-content: center;
     flex-wrap: wrap;
     width: 28vw;
+    height: 30vh;
     gap: 1vw 1vw;
     margin-left: 30vw;
-    margin-top: 20vh;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
     align-items: center;
 }
 
@@ -49,16 +51,16 @@ footer {
 
 .specialButons {
     font-size: 2vw;
-
 }
 
 textarea {
-    height: 12vh;
+    height: 10vh;
     text-align: right;
 }
 
 ul {
     list-style-type: none;
+    height: 20vh;
 }
 
 input[type="radio"]{
@@ -66,3 +68,5 @@ input[type="radio"]{
     border:2px solid black; 
     cursor:pointer;
 }
+
+

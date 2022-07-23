@@ -14,9 +14,7 @@ numericButtons.forEach((button) => {
                 buttonPressed(button.textContent);
             }
             
-        }
-        else
-        {
+        } else {
             if (document.getElementById('multiplication').checked && number1 != null) {
                 let text = display.textContent;
                 let number2 = parseFloat(text);
@@ -45,7 +43,6 @@ numericButtons.forEach((button) => {
             }
             uncheckAll();
         }
-        
     });
 });
 
