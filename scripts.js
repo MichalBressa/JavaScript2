@@ -8,10 +8,17 @@ numericButtons.forEach((button) => {
     button.addEventListener('click', () => {
         if(button.value != "="){
             if(button.value == "."){
-                buttonPressed(button.textContent);
-                document.querySelector(dotBtn).disabled = true;
-            }else {
-                buttonPressed(button.textContent);
+                const displayText = display.textContent;
+                if (displayText.charAt(displayText.length - 1) != "."){
+                    buttonPressed(button.textContent);
+                }
+            } else {
+                if (display.textContent.charAt(0) == "0" && button.value == 0)
+                {
+                    // do nothing
+                } else {
+                    buttonPressed(button.textContent);
+                }
             }
             
         } else {
@@ -19,27 +26,27 @@ numericButtons.forEach((button) => {
                 let text = display.textContent;
                 let number2 = parseFloat(text);
                 display.textContent = multiply(number1, number2);
-                document.querySelector(dotBtn).disabled = false;
+                
             } else if (document.getElementById('division').checked && number1 != null){
                 let text = display.textContent;
                 let number2 = parseFloat(text);
                 display.textContent = divide(number1, number2);
-                document.querySelector(dotBtn).disabled = false;
+                
             } else if (document.getElementById('addition').checked && number1 != null){
                 let text = display.textContent;
                 let number2 = parseFloat(text);
                 display.textContent = addition(number1, number2);
-                document.querySelector(dotBtn).disabled = false;
+                
             } else if (document.getElementById('subtraction').checked && number1 != null){
                 let text = display.textContent;
                 let number2 = parseFloat(text);
                 display.textContent = subtraction(number1, number2);
-                document.querySelector(dotBtn).disabled = false;
+                
             } else if (document.getElementById('modulus').checked && number1 != null){
                 let text = display.textContent;
                 let number2 = parseFloat(text);
                 display.textContent = modulus(number1, number2);
-                document.querySelector(dotBtn).disabled = false;
+                
             }
             uncheckAll();
         }
@@ -69,7 +76,6 @@ specialButtons.forEach((button) => {
                 display.textContent = "";
                 number1 = null;
                 uncheckAll();
-                document.querySelector(dotBtn).disabled = false;
                 break;
             case "DEL":
                 display.textContent = display.textContent.slice(0, -1);
@@ -87,8 +93,6 @@ specialButtons.forEach((button) => {
     });
 });
 
-
-
 // add sanity checks
 function multiply(num1, num2){
     try {
@@ -103,7 +107,7 @@ function multiply(num1, num2){
         prompt("Error, invalid input");
     }
 
-    return num1 * num2;
+    return checkResult(num1 * num2);
 }
 
 function divide(num1, num2){
@@ -123,9 +127,8 @@ function divide(num1, num2){
     if (num2 == 0){
         prompt("Do not divide by 0");
         return 0;
-    }
-
-    return num1/num2;
+    } 
+    return checkResult(num1/num2);
 }
 
 function addition(num1, num2){
@@ -141,7 +144,7 @@ function addition(num1, num2){
         prompt("Error, invalid input");
     }
 
-    return num1+num2;
+    return checkResult(num1+num2);
 }
 
 function subtraction(num1, num2){
@@ -157,7 +160,7 @@ function subtraction(num1, num2){
         prompt("Error, invalid input");
     }
 
-    return num1-num2;
+    return checkResult(num1-num2);
 }
 
 function modulus(num1, num2){
@@ -173,7 +176,16 @@ function modulus(num1, num2){
         prompt("Error, invalid input");
     }
 
-    return num1 % num2;
+    return checkResult(num1 % num2);
+}
+
+function checkResult(x){
+    if (x.length > 6){
+        return Math.round(x);
+    }
+    else {
+        return x;
+    }
 }
 
 
