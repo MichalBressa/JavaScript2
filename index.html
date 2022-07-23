@@ -14,25 +14,40 @@
     <script src="./scripts.js" defer></script>
 
     <section class="mainSection">
-        <textarea name="display" id="textArea">XXX</textarea>
-        <button class="buttonsSectionItems specialButons">AC</button>
-        <button class="buttonsSectionItems specialButons">+/-</button>
-        <button class="buttonsSectionItems specialButons">%</button>
-        <button class="buttonsSectionItems specialButons">/</button>
-        <button class="buttonsSectionItems numericButons">7</button>
-        <button class="buttonsSectionItems numericButons">8</button>
-        <button class="buttonsSectionItems numericButons">9</button>
-        <button class="buttonsSectionItems">X</button>
-        <button class="buttonsSectionItems numericButons">4</button>
-        <button class="buttonsSectionItems numericButons">5</button>
-        <button class="buttonsSectionItems numericButons">6</button>
-        <button class="buttonsSectionItems">X</button>
-        <button class="buttonsSectionItems numericButons">1</button>
-        <button class="buttonsSectionItems numericButons">2</button>
-        <button class="buttonsSectionItems numericButons">3</button>
-        <button class="buttonsSectionItems">X</button>
-        <button class="buttonsSectionItems numericButons">0</button>
-        <button class="buttonsSectionItems">,</button>
+        <textarea name="display" id="textArea"></textarea>
+
+        <ul class="buttonsSection">
+          <li id="firstRow">
+            <button class="buttonsSectionItems specialButons">AC</button>
+            <button class="buttonsSectionItems specialButons">+/-</button>
+            <button class="buttonsSectionItems specialButons">DEL</button>
+            <input type="radio" class="buttonsSectionItems specialButons" value="/" name="operation" id="division"> /
+          </li>
+          <li id="secondRow">
+            <button class="buttonsSectionItems numericButons">7</button>
+            <button class="buttonsSectionItems numericButons">8</button>
+            <button class="buttonsSectionItems numericButons">9</button>
+            <input type="radio" class="buttonsSectionItems specialButons" value="X" name="operation" id="multiplication"> X
+          </li>
+          <li id="thirdRow">
+            <button class="buttonsSectionItems numericButons">4</button>
+            <button class="buttonsSectionItems numericButons">5</button>
+            <button class="buttonsSectionItems numericButons">6</button>
+            <input type="radio" class="buttonsSectionItems specialButons" value="-" name="operation" id="subtraction"> -
+          </li>
+          <li id="fourthRow">
+            <button class="buttonsSectionItems numericButons">1</button>
+            <button class="buttonsSectionItems numericButons">2</button>
+            <button class="buttonsSectionItems numericButons">3</button>
+            <input type="radio" class="buttonsSectionItems specialButons" value="+" name="operation" id="addition"> +
+          </li>
+          <li id="fifthRow">
+            <button class="buttonsSectionItems numericButons">0</button>
+            <button class="buttonsSectionItems numericButons" value="." id="dotButton">.</button>
+            <button class="buttonsSectionItems numericButons" value="=">=</button>
+            <input type="radio" class="buttonsSectionItems specialButons" value="%" name="operation" id="modulus"> %
+          </li>
+        </ul>
     </section>
   </body>
 </html>
