@@ -126,9 +126,14 @@ function divide(num1, num2){
 
     if (num2 == 0){
         prompt("Do not divide by 0");
-        return 0;
+        display.textContent = "";
+        return "";
     } 
-    return checkResult(num1/num2);
+    let result = num1/num2;
+    if (result.length > 4){
+        result = Math.round(result);
+    }
+    return result
 }
 
 function addition(num1, num2){
@@ -175,12 +180,15 @@ function modulus(num1, num2){
     } catch (e) {
         prompt("Error, invalid input");
     }
-
-    return checkResult(num1 % num2);
+    let result = num1 % num2;
+    if (result.length > 4){
+        result = Math.round(result);
+    }
+    return result
 }
 
 function checkResult(x){
-    if (x.length > 6){
+    if (x.length > 4){
         return Math.round(x);
     }
     else {
@@ -188,21 +196,8 @@ function checkResult(x){
     }
 }
 
-
 function uncheckAll(){
     const radiobtns = document.getElementsByName("operation");
     for(var i=0;i<radiobtns.length;i++)
       radiobtns[i].checked = false;
 }
-/*
-schemat
-const firstNumber = display.textContent  // check if is int / float
-https://dev.to/sanchithasr/7-ways-to-convert-a-string-to-number-in-javascript-4l
-bool? operationChosen = true;
-
-
-if (operationChosen){
-    
-}
-*/
-
