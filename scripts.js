@@ -86,7 +86,7 @@ specialButtons.forEach((button) => {
                     let number = parseFloat(text) * -1;
                     display.textContent = number;
                 } catch (e) {
-                    prompt("Error, invalid input");
+                    alert("Error, invalid input");
                 }
                 break;
         }
@@ -98,13 +98,13 @@ function multiply(num1, num2){
     try {
         num1 = parseFloat(num1);
     } catch (e) {
-        prompt("Error, invalid input");
+        alert("Error, invalid input");
     }
 
     try {
         num2 = parseFloat(num2);
     } catch (e) {
-        prompt("Error, invalid input");
+        alert("Error, invalid input");
     }
 
     return checkResult(num1 * num2);
@@ -115,17 +115,17 @@ function divide(num1, num2){
     try {
         num1 = parseFloat(num1);
     } catch (e) {
-        prompt("Error, invalid input");
+        alert("Error, invalid input");
     }
 
     try {
         num2 = parseFloat(num2);
     } catch (e) {
-        prompt("Error, invalid input");
+        alert("Error, invalid input");
     }
 
     if (num2 == 0){
-        prompt("Do not divide by 0");
+        alert("Do not divide by 0");
         display.textContent = "";
         return "";
     } 
@@ -133,20 +133,20 @@ function divide(num1, num2){
     if (result.length > 4){
         result = Math.round(result);
     }
-    return result
+    return result;
 }
 
 function addition(num1, num2){
     try {
         num1 = parseFloat(num1);
     } catch (e) {
-        prompt("Error, invalid input");
+        alert("Error, invalid input");
     }
 
     try {
         num2 = parseFloat(num2);
     } catch (e) {
-        prompt("Error, invalid input");
+        alert("Error, invalid input");
     }
 
     return checkResult(num1+num2);
@@ -156,13 +156,13 @@ function subtraction(num1, num2){
     try {
         num1 = parseFloat(num1);
     } catch (e) {
-        prompt("Error, invalid input");
+        alert("Error, invalid input");
     }
 
     try {
         num2 = parseFloat(num2);
     } catch (e) {
-        prompt("Error, invalid input");
+        alert("Error, invalid input");
     }
 
     return checkResult(num1-num2);
@@ -172,13 +172,13 @@ function modulus(num1, num2){
     try {
         num1 = parseFloat(num1);
     } catch (e) {
-        prompt("Error, invalid input");
+        alert("Error, invalid input");
     }
 
     try {
         num2 = parseFloat(num2);
     } catch (e) {
-        prompt("Error, invalid input");
+        alert("Error, invalid input");
     }
     let result = num1 % num2;
     if (result.length > 4){
